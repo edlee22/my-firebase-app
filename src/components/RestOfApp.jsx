@@ -3,6 +3,8 @@ import logo from "../logo.svg";
 import "../App.css";
 import { AuthContext } from "../providers/AuthProvider";
 import LoginForm from "./LoginForm";
+import HeroesList from "./HeroesList";
+import AddHeroForm from "./AddHeroForm";
 
 function RestOfApp() {
   
@@ -15,6 +17,11 @@ function RestOfApp() {
       <br />
       <br />
       <LoginForm />
+      <br />
+      <br />
+      <br />
+      <AddHeroForm />
+      <HeroesList />
     </div>
   );
 };
