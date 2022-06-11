@@ -1,11 +1,7 @@
 import React from "react";
 
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
+import {getAuth} from 'firebase/auth';
 const firebaseConfig = {
   apiKey: "AIzaSyAGGl8VLoHOy7m2mzSWN2K_88pmaxn-pKo",
   authDomain: "my-firebase-project-17e80.firebaseapp.com",
@@ -17,11 +13,13 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
 export const FirebaseContext = React.createContext();
 
 function FirebaseProvider(props) {
   const children = props.children;
-  const theValues = { app };
+  const theValues = { app, auth };
   return (
     <FirebaseContext.Provider value={theValues}>
       {children}
